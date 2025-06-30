@@ -1,0 +1,289 @@
+.register-container {
+  width: 100%;
+  max-width: 380px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 165px
+}
+
+
+.register-container h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.register-container p {
+  font-size: 14px;
+  color: #666;
+}
+
+.register-container a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.register-form label {
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.register-form button {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.register-form button:hover {
+  background: #333;
+}
+
+.register-footer {
+  font-size: 12px;
+  color: #666;
+  margin-top: 15px;
+}
+
+.register-footer a {
+  font-weight: bold;
+}
+
+/* Wrapper container toast */
+.custom-toast-register {
+  top: 85px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100% !important;
+  max-width: 400px !important; /* Sama dengan .register-container */
+  padding: 0 10px !important;
+  z-index: 9999 !important;
+  box-sizing: border-box !important;
+}
+
+/* Kotak toast-nya */
+.custom-toast-body-register {
+  font-size: 14px !important;
+  padding: 14px 18px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  background: #ffffff !important;
+  color: #333 !important;
+  white-space: normal !important;   /* Wrap kalimat panjang */
+  word-break: break-word !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  /* Register wrapper hanya untuk layout, tanpa styling box */
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    margin-bottom: 221px; /* Sesuaikan untuk memberi ruang ke footer */
+  }
+
+  .register-form button {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s;
+  }
+
+  .register-form button:hover {
+    background: #333;
+  }
+
+  .register-footer {
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .register-footer a {
+    font-weight: bold;
+  }
+
+  /* Footer di halaman register */
+  .footer {
+    background-color: #f9f9f9;
+    padding: 20px 15px;
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-section {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #777;
+  }
+}
+@media (max-width: 768px) {
+  /* Register wrapper hanya untuk layout, tanpa styling box */
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    margin-bottom: 320px; /* Sesuaikan untuk memberi ruang ke footer */
+  }
+
+  .register-form button {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background 0.3s;
+  }
+
+  .register-form button:hover {
+    background: #333;
+  }
+
+  .register-footer {
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .register-footer a {
+    font-weight: bold;
+  }
+
+  /* === Toastify (Login) === */
+  .custom-toast-register {
+    top: 85px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 130% !important;
+    max-width: 130% !important;
+    padding: 0 10px !important;
+  }
+
+  .custom-toast-body-register {
+    font-size: 13px !important;
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  /* Footer di halaman register */
+  .footer {
+    background-color: #f9f9f9;
+    padding: 20px 15px;
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-section {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #777;
+  }
+}

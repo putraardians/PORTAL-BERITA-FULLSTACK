@@ -1,0 +1,338 @@
+/* Warna dan layout khusus halaman admin */
+.news-admin-container .news-container {
+    max-width: 95%;  /* Lebar lebih proporsional */
+    width: 100%;
+    margin: 20px auto;  /* Dipusatkan dengan jarak lebih baik */
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 260px; /* Sesuai dengan lebar sidebar */
+    width: calc(100% - 250px);
+    margin-top: 75px;
+}
+
+
+.news-admin-container .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.news-admin-container .add-button {
+    padding: 8px 12px;
+    background: #1a1a2e;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Filter dan Pencarian */
+.news-admin-container .filter-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.news-admin-container .search-box {
+    padding: 5px;
+    border: 1px solid #ddd; /* Sebelumnya #ffffff, ubah ke warna yang terlihat */
+    border-radius: 4px;
+    background-color: white; /* Tambahkan background putih agar terlihat */
+}
+
+/* Main Content */
+.news-admin-container .main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 20px;
+}
+
+/* Table */
+.news-admin-container .news-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+    
+}
+
+.news-admin-container .news-table th, 
+.news-admin-container .news-table td {
+    text-transform: none; /* Menghindari huruf kapital otomatis */
+}
+
+.news-admin-container .news-table th {
+    background: #f8f9fa;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.news-admin-container .news-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    text-align: left;
+}
+
+.news-admin-container .news-table td.aksi {
+    text-align: center;
+    width: 150px;
+}
+
+/* Tombol Edit dan Hapus */
+.news-admin-container .edit-button {
+    padding: 5px 10px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Hapus garis bawah jika berupa link <a> */
+    display: inline-block; /* Supaya bisa tampil seperti tombol */
+}
+
+.news-admin-container .delete-button {
+    padding: 5px 10px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.news-admin-container .edit-button:hover {
+    background: #45a049;
+}
+
+.news-admin-container .delete-button:hover {
+    background: #d32f2f;
+}
+
+
+/* Tab Filter Status */
+.news-admin-container .news-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.news-admin-container .news-tabs button {
+    background: #bdbdbd; /* Warna abu-abu agar seragam */
+    border: 1px solid #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black; /* Warna teks hitam agar kontras */
+}
+
+.news-admin-container .entries-control {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Tambah jarak antar elemen */
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+.news-admin-container .news-tabs button.active-tab {
+    background: #1a1a2e; /* Warna aktif tetap lebih gelap */
+    color: white;
+    border-color: #1a1a2e;
+}
+.news-admin-container .news-tabs button:hover {
+    background: #a0a0a0; /* Sedikit lebih gelap saat hover */
+}
+
+.news-content-preview,
+.news-content-preview * {
+  color: #000 !important;
+}
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.news-admin-container .edit-button,
+.news-admin-container .delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+  padding: 6px 12px;
+  line-height: 1.2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Warna tombol */
+.news-admin-container .edit-button {
+  background-color: #4caf50;
+}
+.news-admin-container .edit-button:hover {
+  background-color: #45a049;
+}
+.news-admin-container .delete-button {
+  background-color: #f44336;
+}
+.news-admin-container .delete-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Ukuran ikon */
+.news-admin-container .edit-button svg,
+.news-admin-container .delete-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+@media (max-width: 768px) {
+  /* Header dan Filter Stack ke Bawah */
+  .news-admin-container .news-header,
+  .news-admin-container .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* Tombol Tambah Jadi Full Width */
+  .news-admin-container .add-button {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Tab Berita Scroll Horizontal */
+  .news-admin-container .news-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px;
+  }
+
+  .news-admin-container .news-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .news-admin-container .news-tabs button {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  /* Search Box Full Width */
+  .news-admin-container .search-box {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Tabel Scroll Horizontal */
+  .news-admin-container .news-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .news-admin-container .news-table table {
+    min-width: 1000px; /* Sesuaikan dengan jumlah kolom */
+    border-collapse: collapse;
+  }
+
+  .news-admin-container .news-table th,
+  .news-admin-container .news-table td {
+    padding: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .news-admin-container .edit-button,
+  .news-admin-container .delete-button {
+    font-size: 13px;
+    padding: 6px 10px;
+    margin-right: 5px;
+  }
+
+  .news-admin-container .news-table td.aksi {
+    width: auto;
+    text-align: left;
+  }
+
+  /* Container Responsif */
+  .news-admin-container .news-container {
+    padding: 10px;
+    margin: 10px;
+    margin-top: 75px;
+    width: 100%;
+  }
+    .table-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .news-table {
+    min-width: 1000px; /* atau lebih, tergantung kolommu */
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .news-table th,
+  .news-table td {
+    padding: 10px;
+    font-size: 14px;
+    white-space: nowrap; /* penting agar konten tidak pindah baris */
+    text-align: left;
+  }
+
+  .news-admin-container .news-header,
+  .news-admin-container .filter-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .news-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 8px;
+  }
+
+  .news-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .news-tabs button {
+    flex-shrink: 0;
+    padding: 6px 12px;
+  }
+}
+
+  

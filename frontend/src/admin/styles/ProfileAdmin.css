@@ -1,0 +1,319 @@
+/* Admin Profile Container */
+.admin-profile-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-top: 75px;
+}
+
+/* Admin Profile Header */
+.admin-profile-header {
+  width: 100%;
+  max-width: 850px;
+  background-color: #b0b0b0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 260px;
+}
+
+.admin-profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: #2c3e50;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.admin-initial-avatar {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* Admin Profile Content */
+.admin-profile-content {
+  width: 100%;
+  max-width: 850px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-left: 260px;
+}
+
+.admin-profile-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.admin-profile-content p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Admin Profile Info */
+.admin-profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Admin Profile Item */
+.admin-profile-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 2px solid #ddd;
+  gap: 10px;
+}
+
+/* Label */
+.admin-profile-label {
+  font-size: 16px;
+  font-weight: bold;
+  width: 150px;
+  min-width: 120px;
+  text-align: left;
+}
+
+/* Value & Input Field */
+.admin-profile-value,
+.admin-profile-input {
+  font-size: 15px;
+  flex: 1;
+  min-height: 36px;
+  color: #333;
+}
+
+/* Admin Profile Input Field */
+.admin-profile-input {
+  flex: none; /* Tidak memaksakan panjang */
+  font-size: 15px;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  border-radius: 80px;
+  transition: border 0.3s ease-in-out;
+  min-height: 34px;
+  background: none;
+  width: 200px; /* Atur lebar tetap */
+  max-width: 100%; /* Responsif */
+}
+
+.admin-profile-input:focus {
+  border-color: black;
+  outline: none;
+}
+
+
+.admin-profile-input:focus {
+  border-color: #000;
+  outline: none;
+}
+
+/* Role Styling */
+.admin-profile-role {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Edit Button */
+/* Edit Button - Universal Style */
+.admin-profile-edit-button {
+  height: auto;
+  padding: 10px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px; /* Sama seperti versi mobile */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.2s;
+  min-width: 80px;
+  max-width: 150px;
+}
+
+.admin-profile-edit-button:hover {
+  background-color: #333;
+  color: #f9f9f9;
+  transform: scale(1.03);
+}
+
+.admin-profile-edit-button:hover {
+  background-color: darkgray;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Custom Toast untuk EditUser */
+.custom-toast-profileadmin {
+  position: fixed;
+  top: 30px;
+  left: 46%; /* Geser ke kanan sedikit */
+  max-width: 250px;
+  width: 100%;
+  background-color: #fff !important;
+  color: #333 !important;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 12px 20px;
+  z-index: 9999;
+}
+
+.custom-toast-profileadmin > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media screen and (max-width: 600px) {
+  .admin-profile-container {
+    padding: 15px;
+    margin-top: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Cegah horizontal overflow */
+  }
+
+  .admin-profile-header,
+  .admin-profile-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* Bungkus teks panjang */
+    word-break: break-word;
+  }
+
+  .admin-profile-icon {
+    font-size: 40px;
+  }
+
+  .admin-profile-content h3 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .admin-profile-content p {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .admin-profile-info {
+    width: 100%;
+  }
+
+  .admin-profile-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+    overflow-wrap: break-word;
+  }
+
+  .admin-profile-label {
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 4px;
+  }
+
+  .admin-profile-value,
+  .admin-profile-input {
+    flex: 1;
+    min-width: 140px;
+    max-width: 100%;
+    font-size: 14px;
+    color: #333;
+    word-break: break-word; /* Bungkus kata jika panjang */
+  }
+
+  .admin-profile-input {
+    padding: 10px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    background: white;
+  }
+
+  .admin-profile-edit-button {
+    width: auto;
+    min-width: 80px;
+    height: 36px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    margin-top: 0;
+    transition: background 0.3s ease;
+    white-space: nowrap; /* Tombol tidak pecah baris */
+  }
+
+  .admin-profile-edit-button:hover {
+    background-color: #333;
+    color: #f9f9f9;
+  }
+
+ .Toastify__toast.custom-toast-profileadmin {
+    position: fixed;
+    top: 0px;
+    right: 30px !important;
+    left: 25px !important;
+    max-width: 340px !important;
+    width: auto;
+    padding: 6px 10px;
+    font-size: 12.5px;
+    background-color: #fff !important;
+    color: #333 !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transform: none !important;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .custom-toast-profileadmin > div {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+.custom-toast-profileadmin> div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+}

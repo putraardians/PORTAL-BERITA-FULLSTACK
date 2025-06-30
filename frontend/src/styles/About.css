@@ -1,0 +1,164 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Menggeser ke atas */
+  gap: 20px; /* Jarak antar card */
+  padding: 30px 60px; /* Kurangi padding atas */
+  max-width: 1400px; /* Lebarkan batas maksimum */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.about-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1300px; /* Perbesar card */
+  min-height: 350px; /* Sesuaikan tinggi agar seragam */
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #1a1a2e;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 30px; /* Jarak antara teks dan gambar */
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+  font-size: 24px; /* Sesuaikan ukuran font */
+  line-height: 1.6;
+  text-align: justify;
+  color: white;
+}
+
+.about-text p {
+  color: white !important;
+}
+
+.about-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-image {
+  height: auto;
+}
+
+.logo-1{
+  width: 440px; /* Logo 1 lebih besar */
+  height: auto;
+}
+
+.logo-2 {
+  width: 350px; /* Logo 2 lebih kecil */
+  height: auto;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 1024px) {
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto; /* Atur tinggi agar tetap proporsional */
+    padding: 30px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    width: 100%;
+    text-align: center;
+    font-size: 22px; /* Perkecil sedikit di layar kecil */
+  }
+
+  .logo {
+    width: 280px; /* Sesuaikan ukuran logo di layar kecil */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px 16px;
+    gap: 20px; /* Lebih rapat antar card */
+  }
+
+  /* Pindahkan logo ke atas untuk card pertama */
+  .about-card:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .about-card:first-child .about-image {
+    order: -1; /* ⬆️ Logo muncul di atas */
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-card:first-child .logo-1 {
+    max-width: 280px;
+    height: auto;
+  }
+
+  .about-card:first-child .about-text {
+    text-align: justify;
+  }
+  .about-card {
+    display: flex;
+    flex-direction: column; /* ✅ Logo di atas, teks di bawah */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px 16px;
+    border-radius: 16px;
+    gap: 16px; /* Jarak antar logo dan konten */
+    text-align: center;
+  }
+
+  .about-content {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .about-text {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 0;
+    margin: 0;
+  }
+
+  .about-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .logo-2 {
+    max-width: 200px;
+  }
+}
+

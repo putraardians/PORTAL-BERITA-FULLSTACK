@@ -1,0 +1,306 @@
+/* Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 150px
+}
+
+/* Login Card */
+.login-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 380px;
+  margin-top: 50px;
+  margin-bottom: -73px
+}
+
+.login-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.signup-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.signup-text a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  padding: 12px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+.input-group input:focus {
+  border-color: black;
+  outline: none;
+}
+
+/* Forgot Password */
+.forgot-password {
+  font-size: 14px;
+  display: block;
+  text-align: right;
+  margin-bottom: 15px;
+  color: black;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.divider span {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  position: relative;
+}
+
+.divider span::before,
+.divider span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ccc;
+}
+
+.divider span::before {
+  left: 0;
+}
+
+.divider span::after {
+  right: 0;
+}
+
+/* Terms and Conditions */
+.terms {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.terms a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Social Login Buttons */
+.social-login {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+  margin-bottom: 10px;
+}
+
+.social-login .icon {
+  font-size: 20px;
+}
+
+.google:hover {
+  background: #f0f0f0;
+}
+
+/* Umum - padding dan style toast */
+.custom-toast .custom-toast-body {
+  font-size: 18px;
+  padding: 16px 24px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* LOGIN DAN REGISTER/* 
+
+/* === Toast khusus halaman login === */
+.custom-toast-login {
+  top: 80px !important; /* Aman dari header login dan form */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100%;
+  max-width: 380px;
+  z-index: 9999;
+}
+
+.custom-toast-body-login {
+  font-size: 16px;
+  padding: 14px 20px;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  width: 100% !important;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  /* Sembunyikan logo footer hanya di halaman login */
+  .login-page .footer-logo {
+    display: none;
+  }
+}
+
+/* Responsive mobile khusus halaman login */
+@media (max-width: 768px) {
+  /* Wrapper utama halaman */
+
+  /* Kontainer login (bagian tengah) */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 343px
+}
+
+  .custom-toast-login {
+    top: 90px !important;
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .custom-toast-body-login {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+/* === Toastify (Login) === */
+  .custom-toast-login {
+    top: 85px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 130% !important;
+    max-width: 130% !important;
+    padding: 0 10px !important;
+  }
+
+  .custom-toast-body-login {
+    font-size: 13px !important;
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  /* Footer login */
+  .footer {
+    background-color: #f9f9f9;
+    padding: 20px 15px;
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-section {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    font-size: 18px;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #777;
+  }
+}

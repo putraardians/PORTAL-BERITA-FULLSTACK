@@ -1,0 +1,259 @@
+/* Warna dan layout khusus halaman admin */
+.users-list-container {
+    max-width: 95%;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 260px; /* Sesuai dengan lebar sidebar */
+    width: calc(100% - 250px);
+    margin-top: 75px;
+}
+
+.users-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.users-add-button {
+    padding: 8px 12px;
+    background: #1a1a2e;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Filter dan Pencarian */
+.users-list-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.users-search-box {
+    padding: 5px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+}
+
+/* Main Content */
+.users-main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 20px;
+}
+
+/* Table */
+.users-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+}
+
+.users-list-table th {
+    background: #f8f9fa;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.users-list-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    text-align: left;
+}
+
+.users-list-table td.aksi {
+    text-align: center;
+    width: 150px;
+}
+
+/* Tombol Edit dan Hapus */
+.users-edit-button {
+    padding: 5px 10px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Hapus garis bawah jika berupa link <a> */
+    display: inline-block; /* Supaya bisa tampil seperti tombol */
+}
+
+.users-delete-button {
+    padding: 5px 10px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.users-edit-button:hover {
+    background: #45a049;
+}
+
+.users-delete-button:hover {
+    background: #d32f2f;
+}
+
+/* Tab Filter Status */
+.users-list-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.users-tab-button {
+    background: #bdbdbd; /* Warna abu-abu agar seragam */
+    border: 1px solid #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black; /* Warna teks hitam agar kontras */
+}
+
+.users-tab-button.active {
+    background: #1a1a2e; /* Warna aktif tetap lebih gelap */
+    color: white;
+    border-color: #1a1a2e;
+}
+
+.users-tab-button:hover {
+    background: #a0a0a0; /* Sedikit lebih gelap saat hover */
+}
+
+.users-list-container .users-edit-button,
+.users-list-container .users-delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;                        /* Lebih longgar antara ikon dan teks */
+  font-size: 14px;
+  padding: 6px 14px;               /* Tambah padding kiri-kanan */
+  line-height: 1.2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.users-list-table td.users-actions {
+  text-align: center;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  /* Container utama */
+  .users-list-container {
+    padding: 15px;
+    margin: 10px;
+    margin-top: 75px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Header stack ke bawah */
+  .users-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .users-list-header h2 {
+    font-size: 20px;
+  }
+
+  .users-add-button {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Tab Status bisa digeser horizontal */
+  .users-list-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+  }
+
+  .users-list-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .users-tab-button {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  /* Filter dan search stack ke bawah */
+  .users-list-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .users-search-box {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* Table scroll horizontal */
+  .users-list-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .users-list-table table {
+    min-width: 800px;
+    border-collapse: collapse;
+  }
+
+  .users-list-table th,
+  .users-list-table td {
+    padding: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .users-list-table td.aksi {
+    width: auto;
+    text-align: left;
+  }
+
+  .users-edit-button,
+  .users-delete-button {
+    font-size: 13px;
+    padding: 6px 10px;
+    margin-right: 5px;
+  }
+
+  /* Hilangkan margin kiri khusus mobile (karena sidebar biasanya disembunyikan) */
+  .users-main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+}
+

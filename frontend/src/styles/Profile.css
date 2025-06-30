@@ -1,0 +1,276 @@
+/* Profile Container */
+.profile-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 238px;
+}
+
+/* Profile Header */
+.profile-header {
+  width: 100%;
+  max-width: 600px;
+  background-color: #b0b0b0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar Container */
+.avatar-container {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.avatar-container .profile-avatar {
+  font-size: 75px;
+  color: gray;
+}
+
+/* Camera Icon */
+.camera-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
+}
+
+/* Profile Title */
+.profile-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Profile Info Section */
+.profile-info {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Subtitle */
+.info-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Info Row */
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #ddd;
+  justify-content: space-between;
+}
+
+/* Label */
+.info-label {
+  font-size: 16px;
+  font-weight: bold;
+  width: 150px;
+  text-align: left;
+}
+
+/* Input + Button Wrapper */
+.info-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 10px;
+  max-width: 100%;
+}
+
+/* Static Value & Input Field */
+.info-value,
+.info-input {
+  flex: 1;
+  max-width: 250px;
+  font-size: 15px;
+  min-height: 34px;
+  padding: 8px 15px;
+  background: none;
+  color: #333;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Input Field Style (edit mode) */
+.info-input {
+  border: 2px solid #ccc;
+  border-radius: 80px;
+  transition: border 0.3s ease-in-out;
+}
+
+.info-input:focus {
+  border-color: black;
+  outline: none;
+}
+
+/* Button */
+.edit-btn {
+  height: 34px;
+  padding: 8px 17px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s, transform 0.2s;
+  min-width: 100px;
+}
+
+.edit-btn:hover {
+  background-color: darkgray;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* OPTIONAL: Show full username on hover */
+.info-value:hover {
+  overflow: visible;
+  white-space: normal;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  z-index: 1;
+  position: relative;
+}
+
+.custom-toast {
+  top: 80px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  max-width: 400px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.custom-toast-body {
+  font-size: 16px;
+  padding: 14px 20px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background-color: #fff;
+  color: #333;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.initial-avatar {
+  background-color: #dc3545;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .info-content {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .info-value,
+  .info-input {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .edit-btn {
+    padding: 0 16px;
+    font-size: 13px;
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    border: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 70px;
+  }
+
+  .edit-btn:hover {
+    background-color: #333;
+    color: #f9f9f9;
+  }
+
+  .custom-toast {
+    top: 40px !important;
+    width: 80%;
+    max-width: 90%;
+  }
+
+  .custom-toast-body {
+    font-size: 15px;
+    padding: 12px 16px;
+  }
+}
+
+
+

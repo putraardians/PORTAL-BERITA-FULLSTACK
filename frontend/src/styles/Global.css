@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Mencegah elemen melebihi ukuran parent */
+}
+
+html, body {
+  height: 100%; /* Pastikan body mengisi seluruh tinggi halaman */
+  width: 100%; /* Pastikan body mengisi seluruh lebar halaman */
+  overflow-x: hidden; /* Hilangkan scrollbar horizontal */
+  overflow-y: scroll; /* Pastikan scroll vertikal tetap ada */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Hilangkan scrollbar di Chrome, Safari, dan Opera */
+}
+
+html {
+  overflow: visible; /* Pastikan overflow html bisa terlihat */
+}

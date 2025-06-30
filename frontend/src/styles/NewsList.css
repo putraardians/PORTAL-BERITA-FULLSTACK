@@ -1,0 +1,607 @@
+/* Wrapper utama dengan grid */
+.news-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr; /* Berita utama lebih besar */
+  grid-template-rows: auto 1fr; /* Membuat bagian bawah tetap sejajar */
+  padding: 20px 160px; /* Kurangi padding atas */
+  align-items: stretch; /* Memastikan tinggi sejajar */
+  width: 100%;
+  max-width: 2080px;
+  margin: 0 auto;
+}
+
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+/* Berita utama */
+.news-main {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.news-main:hover {
+  transform: scale(1.05); /* Zoom sedikit */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3); /* Bayangan lebih dramatis */
+}
+
+/* Efek animasi saat keluar hover */
+.news-main:active {
+  transform: scale(0.98); /* Sedikit mengecil saat diklik */
+}
+
+.news-main:hover {
+  transform: scale(1.05) rotate(1deg); /* Zoom sedikit & miring sedikit */
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3); /* Bayangan lebih dramatis */
+}
+
+/* Efek animasi saat keluar hover */
+.news-main:active {
+  transform: scale(0.98); /* Sedikit mengecil saat diklik */
+}
+
+.news-main-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.news-main-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75); /* Lebih gelap agar teks terbaca */
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Tambahkan bayangan agar teks lebih jelas */
+}
+
+
+/* Ubah warna judul agar full hitam */
+.news-main-text h2, 
+.news-main-text h1 {
+  color: rgb(255, 255, 255)  !important; /* Full hitam */
+  font-weight: bold;
+}
+
+/* Memberikan jarak antar elemen di dalamnya */
+.news-main-text h2 {
+  font-size: 1.5rem;
+  margin-bottom: 14px; /* Tambahkan jarak bawah */
+}
+
+/* Default untuk .news-meta */
+.news-meta {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  font-weight: bold;
+  display: block;
+}
+
+/* Warna putih hanya untuk berita utama */
+.news-main .news-meta {
+  color: white;
+  font-size: 24px; /* Perbesar hanya untuk utama */
+  margin-top: 17px;
+}
+
+/* Sidebar & Berita tambahan menggunakan warna abu-abu */
+.news-sidebar .news-meta,
+.news-sub .news-meta {
+  color: #777; /* Abu-abu agar tidak mencolok */
+  font-size: 0.8rem; /* Lebih kecil agar lebih rapi */
+}
+
+.news-main-text p,
+.news-meta {
+    color: white;
+    font-size: 18px; /* Perbesar hanya untuk utama */
+}
+
+/* SIIIIIIIIIIIIIIIIIIII DEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR */
+.news-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+  min-height: 100%; /* Samakan tinggi dengan berita utama */
+}
+
+.news-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Pastikan berita utama dan sidebar memiliki tinggi yang sama */
+.news-main,
+.news-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Pastikan tinggi penuh */
+}
+
+/* Pastikan isi sidebar tidak merusak layout */
+.news-sidebar-item {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.news-sidebar-item img {
+  width: 100%;
+  height: 220px; /* Perbesar */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Memperbesar judul berita di sidebar */
+.news-sidebar-item h3 {
+  font-size: 2rem !important; /* Perbesar ukuran font */
+  font-weight: bold;
+  margin: 12px 0;
+  color: #222; /* Warna lebih gelap agar lebih jelas */
+  line-height: 1.4; /* Tambahkan jarak antar baris */
+}
+
+/* Jika ada elemen anchor di dalam h3 */
+.news-sidebar-item h3 a {
+  font-size: 2rem !important;
+  font-weight: bold;
+  color: inherit; /* Warna mengikuti parent */
+  text-decoration: none; /* Hilangkan underline */
+}
+
+/* Perbesar teks author dan tanggal */
+.news-sidebar .news-meta {
+  font-size: 1rem !important; /* Ukuran lebih besar */
+  font-weight: bold;
+  color: #333;
+}
+
+/* Jika author dan date punya class tersendiri */
+.news-sidebar .news-meta .author,
+.news-sidebar .news-meta .date {
+  font-size: 1rem !important; /* Pastikan diperbesar */
+  font-weight: bold;
+}
+
+/* Perbesar tombol Read More */
+.news-sidebar-item .read-more-btn {
+  font-size: 1rem !important; /* Ukuran lebih besar */
+  padding: 14px 28px; /* Tambah padding supaya proporsional */
+}
+
+/* Responsif agar tetap enak dilihat di layar kecil */
+@media (max-width: 768px) {
+  .news-sidebar-item h3,
+  .news-sidebar-item h3 a {
+    font-size: 1.6rem !important;
+  }
+
+  .news-sidebar .news-meta {
+    font-size: 1.2rem !important;
+  }
+
+  .news-sidebar-item .read-more-btn {
+    font-size: 1.3rem !important;
+    padding: 10px 24px;
+  }
+}
+
+/* BAWAH BERITA *//* BAWAH BERITA *//* BAWAH BERITA *//* BAWAH BERITA *//* BAWAH BERITA *//* BAWAH BERITA *//* BAWAH BERITA *//* BAWAH BERITA */
+/* Berita tambahan sejajar dengan berita utama & sidebar */
+.news-sub {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  gap: 45px;
+  padding: 10px;
+  grid-column: span 2;
+}
+
+/* Item berita tambahan */
+.news-sub-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 9px;
+  transition: transform 0.3s ease;
+  min-height: 350px; /* Pastikan card proporsional */
+}
+
+/* Judul berita */
+.news-sub-item h3 {
+  font-size: 16px; /* atau 18px, konsistenkan */
+  margin: 12px 0;
+  font-weight: bold;
+  text-align: justify;
+}
+
+/* Gambar berita */
+.news-sub-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  min-height: 200px; /* Pastikan card proporsional */
+}
+
+
+/* ================= */
+/* Kategori Buttons */
+/* ================= */
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.category-buttons button {
+  background: linear-gradient(135deg, #4CAF50, #2E8B57); /* Gradient hijau */
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px; /* Buat lebih membulat */
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15); /* Tambahkan bayangan */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efek Hover */
+.category-buttons button:hover {
+  background: linear-gradient(135deg, #45a049, #1e6f43); /* Warna lebih gelap saat hover */
+  transform: translateY(-3px); /* Efek naik sedikit */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol Aktif */
+.category-buttons .active {
+  background: linear-gradient(135deg, #ff9800, #e65100); /* Warna lebih kontras */
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+/* Efek animasi ketika diklik */
+.category-buttons button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk tombol Read More */
+.read-more-btn {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.read-more-btn:hover {
+  background: linear-gradient(45deg, #0056b3, #003d82);
+  transform: scale(1.05);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Penyesuaian untuk tampilan di sidebar */
+.news-sidebar-item .read-more-btn {
+  font-size: 12px;
+  padding: 6px 12px;
+  margin-top: 5px;
+  width: fit-content; /* Lebar hanya sesuai dengan isi tombol */
+  display: inline-block; /* Agar tidak melebar ke seluruh sidebar */
+}
+/* Penyesuaian untuk berita tambahan */
+.news-sub-item .read-more-btn {
+  width: 100%; /* Agar melebar sesuai card */
+}
+
+/* Tambahkan class loading-wrapper untuk loading state */
+.loading-wrapper {
+  display: none;
+}
+
+
+  
+/* Responsive untuk mobile */
+@media (max-width: 600px) {
+  .loading-wrapper {
+    font-size: 1rem;
+    height: 40vh;
+    padding: 15px;
+  }
+}
+/* RESPONSIF UNTUK RESOLUSI BESAR (2560px) */
+@media (min-width: 2560px) {
+  .news-wrapper {
+    padding: 20px 240px; /* Lebih proporsional untuk layar besar */
+  }
+
+  .news-main-text h2 {
+    font-size: 2rem;
+  }
+}
+
+/* RESPONSIF UNTUK LAPTOP & DESKTOP UMUM (1920px) */
+@media (max-width: 1920px) {
+  .news-wrapper {
+    padding: 20px 160px;
+  }
+}
+
+/* RESPONSIF UNTUK TABLET (1024px - 1366px) */
+@media (max-width: 1366px) {
+  .news-wrapper {
+    grid-template-columns: 1fr; /* Susun vertikal */
+    padding: 20px 80px;
+  }
+
+  .news-sidebar {
+    grid-column: 1 / 2;
+  }
+}
+
+/* RESPONSIF UNTUK MOBILE (<=768px) */
+@media (max-width: 768px) {
+  /* Menjaga wrapper tetap responsif tanpa scroll */
+  .news-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Jarak antar elemen */
+    padding: 0 10px; /* Mengurangi padding agar lebih rapih */
+    width: 100%; /* Pastikan lebar penuh */
+    box-sizing: border-box; /* Menghindari overflow */
+  }
+
+  .news-main,
+  .news-sidebar,
+  .news-sub {
+    width: 100%; /* Memastikan semua bagian mengambil lebar penuh */
+    margin: 0; /* Menghilangkan margin */
+    padding: 0; /* Menghilangkan padding tambahan */
+  }
+
+  .news-main {
+    order: 1;
+  }
+
+  .news-sidebar {
+    order: 2;
+    padding: 0; /* Menghilangkan padding yang tidak perlu */
+  }
+
+  .news-sub {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Jarak antar sub-item */
+  }
+
+  .news-sub-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 8px 0; /* Mengurangi padding untuk menghemat ruang */
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Gambar berita tambahan disesuaikan untuk mobile */
+  .news-sub-item img {
+    width: 100%; /* Gambar mengambil lebar penuh */
+    height: 140px; /* Menyesuaikan ukuran gambar */
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  /* Judul berita tambahan */
+  .news-sub-item h2 {
+    font-size: 14px; /* Ukuran font lebih kecil untuk judul berita tambahan */
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-align: left;
+    width: 100%; /* Menyesuaikan lebar judul */
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .news-sub-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+  padding: 12px 9px;
+}
+
+  /* Metadata berita tambahan */
+  .news-sub-item .news-meta {
+    font-size: 15px;
+    color: #888;
+  }
+
+  /* Gambar utama untuk berita utama */
+  .news-main-image {
+    height: 100px; /* Menyesuaikan tinggi gambar utama */
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .news-main-text {
+    position: static;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin-top: -4px;
+  }
+
+  .news-main-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .news-main-text p {
+    font-size: 0.95rem;
+    text-align: justify; /* ✅ tambahkan ini */
+  }
+
+  /* Tombol Read More */
+  .read-more-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  /* Perkecil ukuran "Read more" di sidebar */
+  .news-sidebar .read-more-btn {
+    font-size: 0.8rem !important; /* Ukuran font lebih kecil untuk sidebar */
+    padding: 9px 12px !important; /* Mengurangi padding untuk tombol lebih kompak */
+  }
+  
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-size: 1rem;
+    font-weight: 1000;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+    .search-results-list {
+    padding: 0 10px;
+  }
+
+  .news-search-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+
+  .news-search-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .news-search-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .news-search-content .news-category {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+
+  .news-search-content .news-meta {
+    font-size: 0.75rem;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .news-search-content p {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  .news-search-content .read-more-btn {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    width: fit-content;
+  }
+
+ /* -------____-- */
+  .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 15px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 40px;
+    margin-bottom: 10px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #007bff;
+  }
+
+  .copyright {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 10px;
+  }
+}

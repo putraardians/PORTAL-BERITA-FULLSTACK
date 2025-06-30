@@ -1,0 +1,36 @@
+.not-authorized-container {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.not-authorized-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.not-authorized-container p {
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .not-authorized-container h1 {
+    font-size: 2rem; /* Mengurangi ukuran font judul di mobile */
+    margin-bottom: 0.5rem; /* Mengurangi jarak bawah */
+  }
+
+  .not-authorized-container p {
+    font-size: 1rem; /* Mengurangi ukuran font paragraf di mobile */
+  }
+
+  .not-authorized-container {
+    min-height: 65vh; /* Mengurangi tinggi minimum container untuk mobile */
+    padding: 10px; /* Menambahkan padding agar lebih rapat */
+  }
+  
+}

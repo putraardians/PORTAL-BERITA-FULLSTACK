@@ -1,0 +1,187 @@
+/* Sidebar Container */
+.sidebar-admin {
+    width: 280px; /* Lebarkan sidebar agar lebih nyaman */
+    background-color: #1a1a2e;
+    padding: 24px 8px; /* Tambah padding agar lebih luas */
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* List menu */
+.sidebar-admin-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Agar menu lainnya tetap di atas */
+}
+
+/* Setiap item menu */
+.sidebar-admin-item {
+    margin-bottom: 16px; /* Jarak antar menu utama */
+}
+
+/* Style menu utama */
+.sidebar-admin-menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 14px 16px; /* Perbesar padding untuk tampilan lebih lebar */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px; /* Perbesar font untuk keterbacaan */
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    margin-bottom: 12px; /* Tambah jarak antar menu */
+}
+
+/* Ikon dan teks sejajar */
+.sidebar-admin-menu-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+/* Ikon dropdown */
+.sidebar-admin-dropdown-icon {
+    display: flex;
+    align-items: center;
+}
+
+/* Style submenu agar sejajar */
+.sidebar-admin-submenu {
+    list-style: none;
+    padding-left: 48px; /* Geser submenu lebih dalam */
+    display: none;
+}
+
+.sidebar-admin-submenu.open {
+    display: block;
+}
+
+/* Style submenu-item agar sejajar */
+.sidebar-admin-submenu-item {
+    display: block;
+    padding: 12px 0; /* Tambah padding untuk tampilan lebih besar */
+    margin-bottom: 8px; /* Beri jarak antar item submenu */
+    font-size: 16px; /* Perbesar ukuran font */
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Hover efek */
+.sidebar-admin-menu-item:hover,
+.sidebar-admin-submenu-item:hover {
+    background-color: #292945;
+    border-radius: 4px;
+    padding-left: 10px; /* Efek indentasi saat hover */
+}
+
+
+/* Ukuran ikon */
+.sidebar-admin-menu-item svg,
+.sidebar-admin-submenu-item svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Logout Admin Button */
+.logout-admin {
+    position: absolute;
+    bottom: 35px; /* Posisikan logout di bawah */
+    width: calc(100% - 16px); /* Sesuaikan dengan lebar sidebar */
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* Hover Logout */
+.logout-admin:hover {
+    background-color: #292945; /* Warna merah untuk logout */
+    color: #ffffff;
+}
+
+.sidebar-admin {
+  width: 280px;
+  background-color: #1a1a2e;
+  padding: 24px 8px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+/* Aktif menu utama */
+.sidebar-admin-item.active > .sidebar-admin-menu-item,
+.sidebar-admin-dropdown.active > .sidebar-admin-menu-item {
+  background-color: #2e2e3a;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Aktif submenu */
+.sidebar-admin-submenu li.active > .sidebar-admin-submenu-item {
+  background-color: #3a3a50;
+  color: white;
+  border-radius: 4px;
+}
+
+
+/* Default: Sidebar tampil (untuk desktop) */
+@media (max-width: 768px) {
+.sidebar-admin {
+  position: fixed;
+  top: 64px; /* 💡 Sesuaikan dengan tinggi header sebenarnya */
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 64px); /* Sesuai tinggi header */
+  background-color: #1a1a2e;
+  padding: 20px 16px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+  .sidebar-admin.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-admin-menu-item,
+  .sidebar-admin-submenu-item {
+    font-size: 16px;
+    padding: 12px 10px;
+  }
+
+  .logout-admin {
+    margin-top: auto; /* ✅ Dorong tombol logout ke bawah */
+    font-size: 16px;
+    padding: 0px 10px;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    border: none;
+    border-radius: 6px;
+  }
+}

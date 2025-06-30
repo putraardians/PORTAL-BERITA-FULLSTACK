@@ -1,0 +1,160 @@
+.footer {
+  width: 100%;
+  background: #0d3b66; /* Warna biru tua agar lebih menarik */
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1550px;
+  margin: 0 auto;
+  align-items: flex-start;
+  text-align: left;
+  gap: 30px; /* Lebih rapat */
+}
+
+
+/* 🔹 Logo & Social Media */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 Agar logo dan teks Connect With Us sejajar di tengah */
+  flex: 1.5;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%; /* 🔥 Pastikan berada di tengah */
+  margin-bottom: 10px; /* Tambahkan jarak bawah jika perlu */
+}
+
+.footer-logo img {
+  width: 60px; /* Sesuaikan ukuran logo */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-connect {
+  margin-top: 10px; /* Tambahkan jarak atas */
+  font-size: 14px;
+  color: #ddd; /* Warna teks lebih soft */
+  text-align: center; /* 🔥 Agar teks di tengah */
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+/* 🔹 Bagian Kategori, Navigasi, dan News Portal */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #f0f0f0;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  font-size: 14px;
+  color: #ccc;
+  margin: 6px 0;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-section ul li:hover {
+  color: white;
+}
+
+/* 🔹 Warna Link Navigation */
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #ffcc00;
+}
+
+/* 🔹 News Portal */
+.news-portal {
+  flex: 1.5;
+  text-align: left;
+}
+
+/* 🔹 Copyright */
+.copyright {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 10px;
+  width: 100%; /* Pastikan tetap di tengah */
+}
+
+.footer-link-button {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+
+/* 🔹 Responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    min-width: 100%;
+    padding: 10px 0;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .logo-section {
+    align-items: center;
+  }
+
+  .news-portal {
+    text-align: center;
+  }
+}

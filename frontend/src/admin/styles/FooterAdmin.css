@@ -1,0 +1,23 @@
+.admin-footer {
+  background: #0d3b66;
+  color: #f1f1f1;
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto; /* 🔥 Dorong footer ke bawah */
+}
+
+.admin-footer-content p {
+  margin: 0;
+  color: #ccc;
+  font-weight: 400;
+  word-break: break-word;  /* Pastikan teks panjang tidak keluar */
+}
+
+.admin-footer-content strong {
+  color: #ffffff;
+  font-weight: bold;
+}

@@ -1,0 +1,134 @@
+/* Verify OTP Container */
+.verify-otp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Verify OTP Card */
+.verify-otp-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 380px;
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  transition: border 0.3s;
+}
+
+.input-group input:focus {
+  border-color: black;
+  outline: none;
+}
+
+/* Submit Button */
+.verify-otp-btn {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 5px;
+}
+
+.verify-otp-btn:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+/* Toast Container Styling */
+.custom-toast-verifyotp {
+  top: 85px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100% !important;
+  max-width: 400px !important; /* Match dengan .verify-otp-card */
+  padding: 0 10px !important;
+  z-index: 9999 !important;
+  box-sizing: border-box !important;
+}
+
+/* Isi kotak toast */
+.custom-toast-body-verifyotp {
+  font-size: 14px !important;
+  padding: 14px 18px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  background: #ffffff !important;
+  color: #333 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ✅ RESPONSIVE - Mobile Friendly */
+@media (max-width: 480px) {
+  .verify-otp-card {
+    width: 100%;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 455px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .verify-otp-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .custom-toast-body-verifyotp {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+}

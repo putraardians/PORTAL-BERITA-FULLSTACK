@@ -1,0 +1,29 @@
+/* Pastikan html dan body memenuhi tinggi layar */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrapper utama agar footer tetap di bawah */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Setidaknya setinggi viewport */
+}
+
+/* Bagian konten agar mendorong footer ke bawah */
+.main-content {
+  flex: 1; /* Mengisi ruang kosong */
+  padding: 20px;
+}
+
+/* Footer tetap di bawah tanpa overlap */
+.footer {
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto; /* Memastikan footer selalu di bawah */
+}

@@ -1,0 +1,199 @@
+/* ==== Layout Edit News ==== */
+.edit-news {
+  padding: 20px;
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container utama */
+.edit-news .edit-news-container {
+  width: 100%;
+  max-width: 900px;
+  margin-left: 260px; /* Selaras dengan sidebar layout */
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.edit-news h2 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* jarak ikon dan teks */
+}
+
+
+/* Form */
+.edit-news .edit-news-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-news-group {
+  margin-bottom: 20px;
+}
+
+.edit-news-group label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  color: #444;
+}
+
+/* Input dan textarea */
+.edit-news .edit-news-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1.5px solid #bbb;
+  box-sizing: border-box;
+}
+
+.edit-news .edit-news-input:focus {
+  border-color: #1a1a2e;
+  outline: none;
+}
+
+/* Tombol Simpan */
+.edit-news .edit-news-button {
+  width: 100%;
+  background: #1a1a2e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.edit-news .edit-news-button:hover {
+  background: #333;
+}
+
+/* Preview konten editor */
+.news-content-preview {
+  color: #000;
+  max-height: 100px;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+.editor-preview-content {
+  text-align: justify;
+}
+
+/* Toast khusus untuk edit news */
+.custom-toast-editnews {
+  position: fixed;
+  top: 30px;
+  left: 46%; /* Geser ke kanan sedikit */
+  max-width: 250px;
+  width: 100%;
+  background-color: #fff !important;
+  color: #333 !important;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 12px 20px;
+  z-index: 9999;
+}
+
+.custom-toast-editnews > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Responsif ===== */
+@media (max-width: 768px) {
+  .edit-news {
+    padding: 10px;
+    margin-top: 60px;
+    justify-content: center;
+  }
+
+  .edit-news .edit-news-container {
+    width: 100%;
+    max-width: 95%;
+    margin-left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .edit-news h2 {
+    font-size: 20px;
+  }
+
+  .edit-news-group label {
+    font-size: 14px;
+  }
+
+  .edit-news .edit-news-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .edit-news .edit-news-button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .news-content-preview {
+    max-height: 150px;
+    font-size: 14px;
+  }
+  .Toastify__toast.custom-toast-editnews {
+    position: fixed;
+    top: 20px;
+    right: 30px !important;
+    left: 20px !important;
+    max-width: 360px !important;
+    width: auto;
+    padding: 6px 10px;
+    font-size: 12.5px;
+    background-color: #fff !important;
+    color: #333 !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transform: none !important;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .custom-toast-editnews > div {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+.custom-toast-editnews> div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+}
