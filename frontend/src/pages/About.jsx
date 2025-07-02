@@ -10,7 +10,7 @@ const About = () => {
       {/* Section 1 */}
       <div className="about-card blue-background">
         <div className="about-text">
-          <h2 className="about-title">NEWS portal website</h2>
+          <h2 className="about-title">News portal website</h2>
           <p>
             <strong>News Portal</strong> is not just about delivering news but providing in-depth perspectives, sharp analysis, and reliable facts through a combination of cutting-edge technology and data-driven journalism, ensuring that every piece of information you read is relevant, accurate, and valuable because here, news is not just information, but the key to understanding the world.
           </p>
