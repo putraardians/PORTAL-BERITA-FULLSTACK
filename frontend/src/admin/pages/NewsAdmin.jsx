@@ -171,6 +171,7 @@ const NewsAdmin = () => {
     }
   };
 
+
   const filteredNews = newsList.filter((news) => {
     const q = searchTerm.toLowerCase();
     const statusMatch =
