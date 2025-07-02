@@ -1,5 +1,7 @@
 import db from "../config/db.js";
 import { fetchNews } from "./newsApi.js"; // Pastikan path sudah benar
+import fs from "fs";
+import path from "path";
 
 // Ambil berita terbaru dari database lokal
 export const getLatestNews = (req, res) => {
@@ -181,7 +183,6 @@ export const getCombinedNews = async (req, res) => {
 };
 
 
-// Menghapus berita berdasarkan ID
 export const deleteNews = (req, res) => {
   const newsId = req.params.id;
 
@@ -189,8 +190,7 @@ export const deleteNews = (req, res) => {
     return res.status(400).json({ message: "ID berita tidak ditemukan." });
   }
 
-  // Ambil dulu judul berita sebelum dihapus
-  const selectSql = `SELECT title FROM news WHERE id = ?`;
+  const selectSql = `SELECT title, image FROM news WHERE id = ?`;
   db.query(selectSql, [newsId], (selectErr, selectResult) => {
     if (selectErr) {
       console.error("Gagal mengambil berita:", selectErr);
@@ -201,25 +201,28 @@ export const deleteNews = (req, res) => {
       return res.status(404).json({ message: "Berita tidak ditemukan." });
     }
 
-    const newsTitle = selectResult[0].title;
+    const imagePath = selectResult[0].image; // contoh: 'uploads/thumb-123.jpg'
+    const fullPath = path.join("public", imagePath);
 
-    // Setelah dapat judul, lakukan delete
+    if (fs.existsSync(fullPath)) {
+      fs.unlink(fullPath, (err) => {
+        if (err) console.error("❌ Gagal hapus gambar:", err);
+        else console.log("🗑️ Gambar dihapus:", fullPath);
+      });
+    }
+
     const deleteSql = `DELETE FROM news WHERE id = ?`;
-    db.query(deleteSql, [newsId], (deleteErr, deleteResult) => {
+    db.query(deleteSql, [newsId], (deleteErr) => {
       if (deleteErr) {
-        console.error("Gagal menghapus berita:", deleteErr);
-        return res.status(500).json({ message: "Terjadi kesalahan saat menghapus berita." });
+        console.error("❌ Gagal hapus berita:", deleteErr);
+        return res.status(500).json({ message: "Gagal menghapus berita." });
       }
 
-      if (deleteResult.affectedRows > 0) {
-        console.log(`✅ Berita berhasil dihapus dengan ID: ${newsId}, Judul: ${newsTitle}`);
-        return res.status(200).json({ message: "Berita berhasil dihapus." });
-      } else {
-        return res.status(404).json({ message: "Berita tidak ditemukan." });
-      }
+      return res.status(200).json({ message: "✅ Berita & gambar berhasil dihapus" });
     });
   });
 };
+
 
 
 // Mengambil berita berdasarkan ID
